@@ -1,0 +1,14 @@
+Build.PL
+Changes
+doc/datamapping
+doc/datarelations
+doc/ideas
+lib/Post/Relation.pm
+lib/Post/Relation/Db.pm
+lib/Post/Relation/Set.pm
+lib/Post/Relation/Table.pm
+MANIFEST			This list of files
+prototype/informationschema.sql
+t/00relation.t
+t/02pod.t
+t/03podcoverage.t

@@ -1,0 +1,36 @@
+ORM
+--
+Basic needs
+- Being able to write random sql. Sql is powerful.
+- Something that understands database schemas.
+- Something that will make acessors for columns.
+- Something that will optionally inflate/deflate columns.
+- Something that will make an iterator over rows.
+- Per web request data caching.
+- Something that can detect metadata changes and automatically apply the correct DDL (data tables only).
+  See more in doc/datasyncing
+- Proper transaction handling.
+- Don't reinvent sql features.
+
+ORLite seems to be something like what I want. Unfortunately only for SQLite. Perhaps there's
+something to be pillaged.
+More ORM's to be looked at
+UR http://www.urobject.org/
+DBIx::SearchBuilder http://search.cpan.org/dist/DBIx-SearchBuilder/
+KiokuDB http://www.iinteractive.com/kiokudb/
+
+Layout
+--
+- Schema
+  - Set
+    - Table
+      - <tables>
+    - <cross table queries>
+
+TODO
+--
+- Schema class
+  Attribute to accept db schema names (not perl schema) for autoloading.
+- Autoloading class
+  Or method(s) in Schema class
+  Generate classes from db schema (information_schema)

@@ -1,0 +1,23 @@
+Code from
+--
+Code and/or ideas from
+http://search.cpan.org/dist/DBIx-Recordset/
+http://search.cpan.org/~adamk/ORLite-1.42/lib/ORLite.pm
+
+From ORlite I want to see the class layout and the table class generation ideas.
+From DBIx::Recordset there could be specific ideas from Store, Add, Join, etc.
+
+Anti Verbosity
+--
+The central idea from this http://blogs.perl.org/users/mike_friedman/2010/04/dbixclass-anti-verbosity.html  blog post is
+Now, instead of writing
+
+my $schema = MyApp::DBIC->connect( ... );
+my @records = $schema->resultset( 'OmnitureArticlePopularity' )->search( ... )
+
+I can write
+
+my $db = MyApp::DBIC->new( type => 'master' );
+my @records = $db->rs_omniture_article_popularity->search( ... )
+
+The auto-generated method names all come from the DB's table names (prepended with rs_ ) which are much easier to remember, and easier to type, than the CamelCased module names. The $db object also keeps track of some useful data about our environment, where there are multiple dev/stage/production databases and abstracts away the configuration.
